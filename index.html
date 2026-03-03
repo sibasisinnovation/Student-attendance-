@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Attendance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+    <div class="login-card">
+    <h2>School Login</h2>
+
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <select id="role">
+        <option value="admin">Admin</option>
+        <option value="teacher">Teacher</option>
+    </select>
+
+    <button onclick="login()">Login</button>
+    <button onclick="exportExcel()">Export to Excel</button>
+</div>
+
+<script src="firebase.js"></script>
+<script src="script.js"></script>
+</body>
+
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>School Panel</h2>
+        <ul>
+            <li class="active">Attendance</li>
+            <li>Students</li>
+            <li>Reports</li>
+            <li>Settings</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="header">
+            <h2>Student Attendance</h2>
+            <div class="user">Welcome, Teacher</div>
+        </div>
+
+        <div class="card">
+            <div class="form-group">
+                <input type="text" id="studentName" placeholder="Enter Student Name">
+                <button onclick="addStudent()">Add Student</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table id="attendanceTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Math</th>
+                            <th>Science</th>
+                            <th>English</th>
+                            <th>History</th>
+                            <th>Computer</th>
+                            <th>Physics</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="table-wrapper">
+    <table id="attendanceTable">
+        ...
+    </table>
+</div>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</body>
+
+</html>
+
